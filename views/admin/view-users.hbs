@@ -1,0 +1,42 @@
+<section>
+    <div class="container">
+        <div class="">
+            <a href="/admin/add-user" class="btn btn-success my-5">Add Users</a>
+        </div>
+        <table class="table mt-5 display" id="usersTable">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each userdetails}}
+                <tr>
+                    <td>{{this.Name}} </td>
+                    <td>{{this.Email}} </td>
+                    <td>
+                        <a href="/admin/edit-user/{{this._id}}" class="btn btn-primary">Edit</a>
+                        <a href="/admin/delete-user/{{this._id}}" class="btn btn-danger"
+                            onclick="return confirm('Are you sure to delete {{this.Name}}?')">Delete</a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+</section>
+{{!-- <script>
+    $(document).ready(function () {
+
+
+        $('#usersTable').wrap('<div id="hide" style="display:none"/>');
+
+        $('#hide').css('display', 'block');
+    });
+
+
+    var table = $('#usersTable').DataTable();
+</script> --}}

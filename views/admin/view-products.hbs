@@ -1,0 +1,35 @@
+<section>
+    <div class="container"> 
+        <div class="">
+            <a href="/admin/add-product" class="btn btn-success mt-5">Add Product</a>
+        </div>
+        <table class="table mt-5">
+            <thead>
+                <tr>
+                    
+                    <th scope="col">Name</th>
+                    <th scope="col">Discription</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Image</th>
+                    <th>Edit/Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each products}}
+                <tr>
+                   
+                    <td>{{this.name}} </td>
+                    <td>{{this.description}} </td>
+                    <td>₹{{this.price}}</td>
+                    <td><img src="/product-images/{{this._id}}.jpg" style="width: 50px; height: 50px;"></td>
+                    <td>
+                        <a href="/admin/edit-productGet/{{this._id}}" class="btn btn-primary">Edit</a>
+                        <a href="/admin/delete-product/{{this._id}}" class="btn btn-danger" onclick="return confirm('Are you sure want to delete {{this.Name}}')">Delete</a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+</section>

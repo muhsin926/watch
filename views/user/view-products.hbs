@@ -1,0 +1,22 @@
+<body>
+    <div class="container-fluid pt-5 pl-5  products-box ">
+        <div class="row d-flex justify-content-around">
+            {{#each products}}
+            <div class="col-md-3">
+                <div class="card text-white  mb-5" style="width: 18rem;">
+                    <img src="product-images/{{this._id}}.jpg" class="card-img-top" alt="Card image cap" 
+                        >
+                    <div class="card-body">
+                        <h5 class="card-title text-dark font-weight-bold">{{this.name}}</h5>
+                        <p class="card-text text-dark font-weight-bold">{{this.description}} </p>
+                        <p class="card-text text-dark font-weight-bold">₹{{this.price}}</p>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            {{/each}}
+
+        </div>
+    </div>
+</body>
